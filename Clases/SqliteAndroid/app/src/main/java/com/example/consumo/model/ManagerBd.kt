@@ -3,6 +3,7 @@ package com.example.consumo.model
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import androidx.core.database.getIntOrNull
 
 data class ManagerBd(val context: Context) {
 
@@ -32,7 +33,37 @@ data class ManagerBd(val context: Context) {
         val resul = bd.insert("ciudad", null, contenedor)
 
         return resul
+    }
 
+    fun showData(): ArrayList<Ciudad> {
+        // abrir bd en modo escritura
+        openBdRd()
+        //lista de ciudades
+        val ciudadArray = ArrayList<Ciudad>()
+        //Cramos el cursor
+        val cursor = bd.rawQuery(Constantes.DATATABLA, null)
+
+        if(cursor.moveToFirst()){
+            do {
+                ///Campos de la base de datos que se van a mostrar
+                val cod = cursor.getColumnIndex("cod")
+                val nombre = cursor.getColumnIndex("nombre")
+                val codedep = cursor.getColumnIndex("codedep")
+
+                //Obtener valores condicionado a not null
+                val id = cursor.getString(cod) ?: " "
+                val nom = cursor.getString(nombre) ?: " "
+                val co = cursor.getString(codedep) ?: " "
+
+                //Añadimos los valores obtenidos del cursor al objeto ciudadArray
+                val ciudad = Ciudad(id.toInt(), nom, co.toInt())
+                //agrego ciudad al array
+                ciudadArray.add(ciudad)
+                //el ciclo se hace hasta que el cursor vaya hasta el siguiente elemento del arreglo
+            }while(cursor.moveToNext())
+        }
+        //retornamos el arreglo para llenar el listView
+        return ciudadArray
     }
 }
 

@@ -6,7 +6,7 @@ class Constantes {
     companion object{
         const val NOM_BD = "BdAdso"
         const val VERSION_BD = 7
-        const val TABLA = "Create table ciudad (cod int, nombre text, codedep int)"
-        const val DATA = "Create table Data (cod int, nombre text,telefono int,direccion text, ciudad text)"
+        const val TABLA = "CREATE TABLE ciudad (cod int, nombre text, codedep int)"
+        const val DATATABLA = "SELECT * FROM ciudad"
     }
 }

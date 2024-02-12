@@ -1,5 +1,6 @@
 package com.example.consumo
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val btnGuardar = binding.btnGuardar
+        val btnMostrar = binding.mostrar
 
         btnGuardar.setOnClickListener {
             val cod = binding.camp1.text.toString().toInt()
@@ -25,6 +27,13 @@ class MainActivity : AppCompatActivity() {
             manager.insertData(cod, nombre, codedep)
             Toast.makeText(this, "Base de Datos Creada", Toast.LENGTH_SHORT).show()
         }
+
+        btnMostrar.setOnClickListener{
+
+            val intentMostrar = Intent(this, MainActivity2::class.java)
+            startActivity(intentMostrar)
+        }
+
     }
 }
 
