@@ -56,11 +56,11 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         if (map != null) {
 
 
-            // Mover la cámara a una ubicación específica (por ejemplo, latitud y longitud)
+            /* // Mover la cámara a una ubicación específica (por ejemplo, latitud y longitud)
             val location = LatLng(2.482846578974007, -76.56253853293643)
             googleMap.addMarker(MarkerOptions().position(location).title("Sena"))
 
-            /*
+
             // Agregar más marcadores según sea necesario
             val location1 = LatLng(2.4449261743007327, -76.6001259041013)
             googleMap.addMarker(MarkerOptions().position(location1).title("Morro"))
@@ -74,17 +74,19 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
             val location4 = LatLng(2.4384226765104264, -76.61884846132872)
             googleMap.addMarker(MarkerOptions().position(location4).title("Hospital Susana López de Valencia"))*/
 
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 18f))
+
+
+            fun setLatLogn(lat: Double, long: Double, title: String){
+
+                // Mover la cámara a una ubicación específica (por ejemplo, latitud y longitud)
+                val location = LatLng(lat, long)
+                googleMap.addMarker(MarkerOptions().position(location).title(title))
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 18f))
+            }
         }
-    }
 
-    fun setLatLogn(lat: Double, long: Double, title: String){
-
-        //googleMap = map
-
-        // Mover la cámara a una ubicación específica (por ejemplo, latitud y longitud)
-        val location = LatLng(lat, long)
-        googleMap.addMarker(MarkerOptions().position(location).title(title))
 
     }
+
+
 }

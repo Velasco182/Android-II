@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.maps.databinding.ActivityMainBinding
 import com.example.maps.fragments.MapsFragment
+import com.example.maps.models.DBManager
 import com.google.android.gms.maps.MapFragment
 
 /*Subir link o repositorio del proyecto realizado de Mapas.
@@ -160,6 +161,15 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
 
+        }
+
+        boton.setOnClickListener(){
+            val lat = latitud.toString()
+            val long = longitud.toString()
+
+            val manager = DBManager(this)
+            manager.insertData(lat, long)
+            Toast.makeText(this, "Data Guardada", Toast.LENGTH_SHORT). show()
         }
 
         /*Importante implementar los servicios de maps (Normalmente al crear un mapFragment los implementa automáticamente,
