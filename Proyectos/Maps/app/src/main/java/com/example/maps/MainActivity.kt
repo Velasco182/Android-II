@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
             val manager = DBManager(this)
             manager.insertData(lat, long)
-            Toast.makeText(this, "Data Guardada", Toast.LENGTH_SHORT). show()
+            Toast.makeText(this, "Data Guardada", Toast.LENGTH_SHORT).show()
         }
 
         /*Importante implementar los servicios de maps (Normalmente al crear un mapFragment los implementa automáticamente,
