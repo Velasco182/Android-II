@@ -164,8 +164,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         boton.setOnClickListener(){
-            val lat = latitud.toString()
-            val long = longitud.toString()
+            val lat = latitud.text.toString()
+            val long = longitud.text.toString()
 
             val manager = DBManager(this)
             manager.insertData(lat, long)
