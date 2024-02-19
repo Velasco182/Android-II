@@ -31,7 +31,7 @@ import com.example.pruebaapp.databinding.FragmentLoginBinding
  */
 class LoginFragment : Fragment() {
     //Binding en fragments
-    private var _binding:FragmentLoginBinding? = null
+    private var _binding : FragmentLoginBinding? = null
     private val binding get() = _binding!!
     ///sharedPreferences
     private lateinit var sharedPre: SharedPreferencesManager
@@ -41,7 +41,6 @@ class LoginFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
     }*/
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

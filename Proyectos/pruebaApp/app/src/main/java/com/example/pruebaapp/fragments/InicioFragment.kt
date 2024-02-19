@@ -7,26 +7,64 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.pruebaapp.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+/* Copilot
+¡Por supuesto! Aquí tienes un paso a paso para crear un diálogo personalizado en Android Studio utilizando Kotlin:
 
-/**
- * A simple [Fragment] subclass.
- * Use the [InicioFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+Crea un nuevo proyecto en Android Studio:
+Abre Android Studio y crea un nuevo proyecto vacío o utiliza uno existente.
+Diseña tu diálogo personalizado:
+Crea un archivo XML para el diseño de tu diálogo. Puedes hacerlo seleccionando File > New > Layout Resource File.
+Diseña la interfaz de usuario del diálogo según tus necesidades. Agrega botones, campos de texto u otros elementos que desees mostrar en el diálogo.
+Crea una clase para tu DialogFragment:
+Crea una nueva clase Kotlin que extienda DialogFragment. Por ejemplo:
+Kotlin
+
+class MyDialogFragment : DialogFragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_my_dialog, container, false)
+    }
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Muestra el diálogo cuando sea necesario:
+En tu actividad o fragmento, crea una instancia de MyDialogFragment y muestra el diálogo utilizando el FragmentManager.
+Por ejemplo, puedes mostrar el diálogo cuando se hace clic en un botón:
+Kotlin
+
+val dialogFragment = MyDialogFragment()
+dialogFragment.show(supportFragmentManager, "my_dialog")
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Agrega lógica a los botones del diálogo:
+En la clase MyDialogFragment, puedes agregar lógica a los botones del diálogo.
+Por ejemplo, para manejar el clic en el botón “Aceptar”:
+Kotlin
+
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    val acceptButton = view.findViewById<Button>(R.id.acceptButton)
+    acceptButton.setOnClickListener {
+        // Acción cuando se hace clic en Aceptar
+        dismiss() // Cierra el diálogo
+    }
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Personaliza el estilo del diálogo (opcional):
+Puedes personalizar el estilo del diálogo utilizando temas y estilos en tu archivo styles.xml.
+Infla el diseño en el archivo XML del diálogo:
+En el archivo XML del diálogo (fragment_my_dialog.xml en este ejemplo), agrega los elementos de diseño que creaste en el paso 2.
+¡Y eso es todo! Ahora tendrás un diálogo personalizado en tu aplicación Android. ¡Buena suerte con tu desarrollo! 🚀
+    */
 class InicioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -36,25 +74,5 @@ class InicioFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inicio, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InicioFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InicioFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
