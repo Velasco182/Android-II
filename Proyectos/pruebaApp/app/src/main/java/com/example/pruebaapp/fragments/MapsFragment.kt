@@ -27,7 +27,7 @@ class MapsFragment : Fragment() , OnMapReadyCallback {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        return inflater.inflate(R.layout.fragment_inicio, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,16 +39,15 @@ class MapsFragment : Fragment() , OnMapReadyCallback {
 
     }
 
-
     override fun onMapReady(map: GoogleMap) {
 
         if (map != null) {
+
             googleMap = map
 
             // Mover la cámara a una ubicación específica (por ejemplo, latitud y longitud)
             val location = LatLng(37.09024, -95.712891)
             googleMap.addMarker(MarkerOptions().position(location).title("Robert Downey Sr. (2022)"))
-
 
             // Agregar más marcadores según sea necesario
             val location1 = LatLng(23.634501, -102.552784)
