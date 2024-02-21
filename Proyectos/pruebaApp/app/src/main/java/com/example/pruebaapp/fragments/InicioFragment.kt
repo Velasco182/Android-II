@@ -74,7 +74,7 @@ class InicioFragment : Fragment() {
 
     private fun loadData() {
         val rutasList = listOf(
-            InicioItem(1, R.drawable.thumbnail, "Pepito Galindez", "10 mins",
+            InicioItem(1, R.drawable.thumbnail, "Pepito ", "10 mins",
                 "San Eduardo", "Campanario", "4567", "10:00 PM"),
             InicioItem(1, R.drawable.thumbnail, "Juanito", "15 mins",
                 "Centro", "Sena", "7890", "2:00 PM")

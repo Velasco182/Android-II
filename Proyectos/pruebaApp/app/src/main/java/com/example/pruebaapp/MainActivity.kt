@@ -17,6 +17,8 @@ import com.example.pruebaapp.fragments.NoticiasFragment
 import com.example.pruebaapp.fragments.NotificacionesFragment
 import com.example.pruebaapp.fragments.PerfilFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.database.database
 
 private const val NUM_PAGES = 4
 
@@ -26,6 +28,12 @@ class MainActivity : AppCompatActivity() {
     var cadena2 = "";
     val miConst = "Esto es una cadena.";
     private lateinit var sharedPre: SharedPreferencesManager
+
+    // Write a message to the database
+    val database = Firebase.database
+    val myRef = database.getReference("message")
+
+
 
 
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -40,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        myRef.setValue("Hello, World!")
         ///Binding
 
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
