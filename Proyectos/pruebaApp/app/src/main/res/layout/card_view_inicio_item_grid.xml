@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardRuta"
         app:cardCornerRadius="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/titulo"
+                android:id="@+id/menorName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -43,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/icons"
+                    android:id="@+id/menorImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@color/black" />
@@ -55,24 +56,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
+                android:text="Hora:"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/rutaActiva"
-                app:layout_constraintTop_toBottomOf="@+id/ruta"
-                tools:text="Hora:" />
+                app:layout_constraintEnd_toEndOf="@+id/estimado"
+                app:layout_constraintTop_toBottomOf="@+id/ruta" />
 
             <TextView
                 android:id="@+id/horaRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/hora"
+                app:layout_constraintTop_toBottomOf="@+id/numeroRuta"
                 tools:text="3:00 PM" />
 
             <TextView
@@ -81,21 +85,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:text="Numero Ruta:"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/estimado"
-                app:layout_constraintTop_toBottomOf="@+id/destino"
-                tools:text="Numero Ruta:" />
+                app:layout_constraintTop_toBottomOf="@+id/destino" />
 
             <TextView
                 android:id="@+id/numeroRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/horaRuta"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ruta"
+                app:layout_constraintTop_toBottomOf="@+id/pDestinoRuta"
                 tools:text="123" />
 
             <TextView
@@ -103,12 +108,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
                 android:text="Ruta Activa"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cardView6"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -145,6 +149,7 @@
                 android:id="@+id/estimadoRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="20 mins"
@@ -156,6 +161,7 @@
                 android:id="@+id/pInicioRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Sena"
@@ -167,6 +173,7 @@
                 android:id="@+id/pDestinoRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Centro"

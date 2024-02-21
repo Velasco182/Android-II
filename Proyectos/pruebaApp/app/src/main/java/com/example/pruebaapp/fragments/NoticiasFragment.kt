@@ -14,7 +14,7 @@ import com.example.pruebaapp.models.NoticiasItem
 class NoticiasFragment  : Fragment(R.layout.fragment_noticias) {
 
     private lateinit var binding: FragmentNoticiasBinding
-    private lateinit var moviesAdapter: NoticiasAdapter
+    private lateinit var noticiasAdapter: NoticiasAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,7 +25,7 @@ class NoticiasFragment  : Fragment(R.layout.fragment_noticias) {
     }
 
     private fun initUI() {
-        moviesAdapter = NoticiasAdapter( addComment = { data -> addCommentFunction(data) })
+        noticiasAdapter = NoticiasAdapter( addComment = { data -> addCommentFunction(data) })
         initList()
         loadData()
     }
@@ -38,7 +38,7 @@ class NoticiasFragment  : Fragment(R.layout.fragment_noticias) {
     private fun initList() {
         binding.rcvNoticias.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = moviesAdapter
+            adapter = noticiasAdapter
         }
     }
 
@@ -54,9 +54,7 @@ class NoticiasFragment  : Fragment(R.layout.fragment_noticias) {
             NoticiasItem(8, R.drawable.thumbnail, "Carlos", "Desapareció el miércoles por la tarde en el parque de diversiones. Se le vio por última vez cerca de los juegos mecánicos. Si lo has visto, por favor comunícate al 3225421368.")
         )
 
-
-
-        moviesAdapter.update(listData)
+        noticiasAdapter.update(listData)
 
     }
 

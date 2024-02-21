@@ -13,12 +13,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebaapp.R
+import com.example.pruebaapp.adapters.InicioAdapter
 import com.example.pruebaapp.databinding.FragmentInicioBinding
+import com.example.pruebaapp.models.InicioItem
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class InicioFragment : Fragment() {
 
     private lateinit var binding: FragmentInicioBinding
+    private lateinit var inicioAdapter: InicioAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +47,44 @@ class InicioFragment : Fragment() {
 
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initUI()
+
+    }
+
+    private fun initUI() {
+        inicioAdapter = InicioAdapter(addComment = {data -> addCommentFunction(data)})
+        initList()
+        loadData()
+    }
+
+    private fun addCommentFunction(data: String) {
+        Toast.makeText(requireContext(), data, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun initList() {
+        binding.recyclerInicio.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = inicioAdapter
+        }
+    }
+
+    private fun loadData() {
+        val rutasList = listOf(
+            InicioItem(1, R.drawable.thumbnail, "Pepito Galindez", "10 mins",
+                "San Eduardo", "Campanario", "4567", "10:00 PM"),
+            InicioItem(1, R.drawable.thumbnail, "Juanito", "15 mins",
+                "Centro", "Sena", "7890", "2:00 PM")
+
+        )
+
+        inicioAdapter.update(rutasList)
+    }
+
+
 
     class MapsDialogFragment : DialogFragment() {
 
@@ -64,6 +110,22 @@ class InicioFragment : Fragment() {
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
+
+            // Crear un nuevo MapFragment
+            val mapFragment = SupportMapFragment.newInstance()
+
+            // Cargar el MapFragment en el FragmentContainerView
+            childFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, mapFragment)
+                .commit()
+
+            // Notificar al MapFragment que está listo para inicializarse
+            mapFragment.getMapAsync { googleMap ->
+                // Aquí puedes configurar el mapa, añadir marcadores, etc.
+                // Por ejemplo:
+                val location = LatLng(2.4449261743007327, -76.6001259041013)
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12f))
+            }
 
             val puntoA = view.findViewById<EditText>(R.id.puntoA)
             val puntoB = view.findViewById<EditText>(R.id.puntoB)
