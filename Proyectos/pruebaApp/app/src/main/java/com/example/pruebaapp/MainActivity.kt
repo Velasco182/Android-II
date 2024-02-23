@@ -33,17 +33,12 @@ class MainActivity : AppCompatActivity() {
     val database = Firebase.database
     val myRef = database.getReference("message")
 
-
-
-
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPager: ViewPager2
     private lateinit var adapter: MainActivity.ScreenSlidePagerAdapter
 
     ///Binding, extendemos binding con ":" del activity, aparece automáticamente la clase
     private lateinit var binding: ActivityMainBinding
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
