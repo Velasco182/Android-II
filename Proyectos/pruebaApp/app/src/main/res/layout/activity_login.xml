@@ -81,6 +81,7 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/loginViewPager"
+            android:background="@drawable/buttom_primary_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/indicador"
