@@ -1,14 +1,13 @@
-package com.example.pruebaapp
+package com.example.pruebaapp.controllers
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.example.pruebaapp.R
 import com.example.pruebaapp.fragments.LoginFragment
 import com.example.pruebaapp.fragments.MenorLoginFragment
 import com.google.android.material.tabs.TabLayout
