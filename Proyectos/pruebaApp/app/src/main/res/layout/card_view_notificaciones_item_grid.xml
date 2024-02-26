@@ -19,7 +19,7 @@
             android:background="@color/primary">
 
             <TextView
-                android:id="@+id/numeroRutaNotificaciones"
+                android:id="@+id/ruta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -31,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/nombreMenorNotificaciones"
+                android:id="@+id/NombreTutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -41,7 +41,7 @@
                 android:text="Juan C merlano"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/cardView6"
-                app:layout_constraintStart_toEndOf="@+id/numeroRutaNotificaciones"
+                app:layout_constraintStart_toEndOf="@+id/ruta"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -59,7 +59,7 @@
                 app:layout_constraintVertical_bias="0.4">
 
                 <ImageView
-                    android:id="@+id/menorImagenNotificaciones"
+                    android:id="@+id/icons"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@color/black" />
@@ -68,7 +68,7 @@
 
 
             <TextView
-                android:id="@+id/mensajeNotificaciones"
+                android:id="@+id/notificacionMensajeTextView"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -78,7 +78,7 @@
                 android:text="Éste es el contenido del mensaje que ha enviado el menor"
                 app:layout_constraintEnd_toStartOf="@+id/cardView6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombreMenorNotificaciones" />
+                app:layout_constraintTop_toBottomOf="@+id/NombreTutor" />
 
             <Button
                 android:id="@+id/descartarNotificacionButton"
@@ -91,10 +91,10 @@
                 android:text="Entendido"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mensajeNotificaciones" />
+                app:layout_constraintTop_toBottomOf="@+id/notificacionMensajeTextView" />
 
             <Button
-                android:id="@+id/llamarMenorNotificacionesButton"
+                android:id="@+id/llamarMenorNButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -107,7 +107,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cardView6"
                 app:layout_constraintStart_toEndOf="@+id/descartarNotificacionButton"
-                app:layout_constraintTop_toBottomOf="@+id/mensajeNotificaciones" />
+                app:layout_constraintTop_toBottomOf="@+id/notificacionMensajeTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

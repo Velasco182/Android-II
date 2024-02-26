@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnGuardar = binding.btnGuardar
         val btnMostrar = binding.mostrar
+        val btnPokemon = binding.buttonPokemon
 
         btnGuardar.setOnClickListener {
             val cod = binding.camp1.text.toString().toInt()
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
             val intentMostrar = Intent(this, MainActivity2::class.java)
             startActivity(intentMostrar)
+        }
+
+        btnPokemon.setOnClickListener {
+
+            val intentPokemon = Intent(this, PokemonActivity::class.java)
+            startActivity(intentPokemon)
+
         }
 
     }

@@ -27,7 +27,7 @@
 
         <activity
             android:screenOrientation="portrait"
-            android:name=".controllers.RegistroRContrasenaActivity"
+            android:name=".RegistroRContrasenaActivity"
             android:exported="false" />
         <activity
             android:screenOrientation="portrait"
@@ -41,11 +41,11 @@
         </activity>
         <activity
             android:screenOrientation="portrait"
-            android:name=".controllers.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:screenOrientation="portrait"
-            android:name=".controllers.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
 
         <meta-data
