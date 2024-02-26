@@ -39,8 +39,12 @@ class PokemonActivity : AppCompatActivity() {
 
                 if(response.isSuccessful){
                     val pokemon: Pokemon? = response.body()
+                    var listaPokemones = ArrayList<Pokemon>()
+
+                    listaPokemones = (pokemon?.results ?:
+
                     //haz lo que quieras con la info del pokemon
-                    Toast.makeText(this@PokemonActivity, "El consumido es $pokemon", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@PokemonActivity, "El consumido es $listaPokemones", Toast.LENGTH_SHORT).show()) as ArrayList<Pokemon>
                     binding.textView.text = pokemon.toString()
                 }else{
                     //Manejar errores
