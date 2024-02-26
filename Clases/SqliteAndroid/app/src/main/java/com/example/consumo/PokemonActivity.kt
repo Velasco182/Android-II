@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import com.example.consumo.apipokemon.Pokemon
 import com.example.consumo.apipokemon.PokemonApiService
+import com.example.consumo.apipokemon.PokemonRespuesta
 import com.example.consumo.databinding.ActivityPokemonBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,10 +36,10 @@ class PokemonActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<Pokemon> {
 
-            override fun onResponse (call: Call<Pokemon>, response: Response<Pokemon>) {
+            override fun onResponse (call: Call<PokemonRespuesta>, response: Response<PokemonRespuesta>) {
 
                 if(response.isSuccessful){
-                    val pokemon: Pokemon? = response.body()
+                    val pokemon: PokemonRespuesta? = response.body()
                     var listaPokemones = ArrayList<Pokemon>()
 
                     listaPokemones = (pokemon?.results ?:
