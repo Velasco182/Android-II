@@ -32,9 +32,9 @@ class PokemonActivity : AppCompatActivity() {
 
         val service = retrofitBuilder.create(PokemonApiService::class.java)
 
-        val call = service.getPokemonByID(20) //Consulta el pokemon por ID
+        val call = service.getPokemonByID() //Consulta el pokemon por ID
 
-        call.enqueue(object : Callback<Pokemon> {
+        call.enqueue(object : Callback<PokemonRespuesta> {
 
             override fun onResponse (call: Call<PokemonRespuesta>, response: Response<PokemonRespuesta>) {
 
