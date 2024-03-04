@@ -7,9 +7,9 @@ import retrofit2.http.Path
 interface PokemonApiService{
     //@GET("pokemon/{pokemon}")
 
-    fun getPokemonByID(@Path("pokemon") id:String): Call<Pokemon>
+    //fun getPokemonByID(@Path("pokemon") id:String): Call<Pokemon>
 
-    @GET("pokemon")
+    @GET("noticias")
     fun getPokemon() : Call<PokemonRespuesta>
 
 }

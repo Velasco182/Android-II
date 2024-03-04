@@ -30,7 +30,7 @@ class PokemonActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val retrofitBuilder = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
+            .baseUrl("https://noticias-api-eosin.vercel.app/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -70,7 +70,7 @@ class PokemonActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<PokemonRespuesta>, t: Throwable) {
-                TODO("Not yet implemented")//Manejar errores de la red
+            // Manejar errores de la red
             }
 
         })

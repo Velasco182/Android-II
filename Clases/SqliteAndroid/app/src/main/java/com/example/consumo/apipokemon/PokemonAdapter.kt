@@ -24,7 +24,7 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val pokemon = pokemonList[position]
         Picasso.get().load("https://i.pinimg.com/originals/04/5a/6b/045a6bf929075321781c3b4805b0dbfc.png").into(holder.ivPokemon)
-        holder.tvPokemonName.text = pokemon.name
+        holder.tvPokemonName.text = pokemon.nombre
     }
 
     override fun getItemCount() = pokemonList.size
